@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+allure-report/
+allure-results/
+
+# Logs
+*.log
+logs/
+
+# Selenium
+webdriver/
+drivers/
+
+# Allure
+allure-report/
+allure-results/
+history/
