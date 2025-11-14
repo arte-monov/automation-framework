@@ -33,7 +33,4 @@ logs/
 webdriver/
 drivers/
 
-# Allure
-allure-report/
-allure-results/
-history/
+debug.py
