@@ -4,7 +4,7 @@ import sys
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, project_root)
 
-from pages.elements_page import TextBoxPage, CheckBoxPage
+from pages.elements_page import TextBoxPage, CheckBoxPage, RadioButtonPage
 
 class TestElements:
     class TestTextBox:
@@ -27,3 +27,17 @@ class TestCheсkBox:
         input_check_box =check_box_page.get_checked_checkboxes()
         output_result = check_box_page.get_output_result()
         assert input_check_box == output_result, 'checkboxes have not been checked'
+
+class TestRadioButton:
+    def test_radio_button(self,driver):
+        radio_button_page = RadioButtonPage(driver, 'https://demoqa.com/radio-button')
+        radio_button_page.open()
+        radio_button_page.click_on_the_radio_button('yes')
+        output_yes = radio_button_page.get_output_result()
+        radio_button_page.click_on_the_radio_button('impressive')
+        output_impressive = radio_button_page.get_output_result()
+        radio_button_page.click_on_the_radio_button('no')
+        output_no = radio_button_page.get_output_result()
+        assert output_yes == 'Yes', 'radio button "yes" is not selected'
+        assert output_impressive == 'Impressive', 'radio button "impressive" is not selected'
+        assert output_no == 'No', 'radio button "no" is not selected'
